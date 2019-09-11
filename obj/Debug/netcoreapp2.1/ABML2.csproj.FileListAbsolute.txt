@@ -1,0 +1,11 @@
+C:\Users\leona\source\repos\ABML2\bin\Debug\netcoreapp2.1\ABML2.deps.json
+C:\Users\leona\source\repos\ABML2\bin\Debug\netcoreapp2.1\ABML2.runtimeconfig.json
+C:\Users\leona\source\repos\ABML2\bin\Debug\netcoreapp2.1\ABML2.runtimeconfig.dev.json
+C:\Users\leona\source\repos\ABML2\bin\Debug\netcoreapp2.1\ABML2.dll
+C:\Users\leona\source\repos\ABML2\bin\Debug\netcoreapp2.1\ABML2.pdb
+C:\Users\leona\source\repos\ABML2\obj\Debug\netcoreapp2.1\ABML2.csprojAssemblyReference.cache
+C:\Users\leona\source\repos\ABML2\obj\Debug\netcoreapp2.1\ABML2.csproj.CoreCompileInputs.cache
+C:\Users\leona\source\repos\ABML2\obj\Debug\netcoreapp2.1\ABML2.AssemblyInfoInputs.cache
+C:\Users\leona\source\repos\ABML2\obj\Debug\netcoreapp2.1\ABML2.AssemblyInfo.cs
+C:\Users\leona\source\repos\ABML2\obj\Debug\netcoreapp2.1\ABML2.dll
+C:\Users\leona\source\repos\ABML2\obj\Debug\netcoreapp2.1\ABML2.pdb
