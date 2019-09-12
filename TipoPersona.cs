@@ -11,7 +11,7 @@ namespace ABML2
 
         public override string ToString()
         {
-            return idTipo+": "+tipoPersona;
+            return "ID "+idTipo+": "+tipoPersona+".";
         }
     }
 }

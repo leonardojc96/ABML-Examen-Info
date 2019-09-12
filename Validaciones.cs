@@ -62,7 +62,7 @@ namespace ABMLEmpleados
             }
             else
             {
-                Console.Write("Inconrrecto, ingrese nuevamente, 1: Hombre, 2: Mujer");
+                Console.Write("Inconrrecto, ingrese nuevamente, 1: Hombre, 2: Mujer: ");
                 return ValidaSexo(Console.ReadLine());
             }
         }

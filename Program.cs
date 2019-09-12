@@ -1,4 +1,5 @@
 ﻿using System;
+using ABMLEmpleados;
 
 namespace ABML2
 {
@@ -25,11 +26,11 @@ namespace ABML2
                 Console.WriteLine("1-Nuevo Alumno.");
                 Console.WriteLine("2-Consultar Alumno.");
                 Console.WriteLine("3-Modificar Alumno.");
-                Console.WriteLine("4-Listar Alumno.");
+                Console.WriteLine("4-Listar Alumnos.");
                 Console.WriteLine("5-Cargar tipo de persona.");
                 Console.WriteLine("6-Cargar carrera.");
                 Console.WriteLine("0-Salir.");
-                opcion = int.Parse(Console.ReadLine());
+                opcion = Validaciones.ANumeroEntero(Console.ReadLine());
                 Console.Clear();
                 OpcionMenu(opcion);
             } while (opcion != 0);
@@ -43,10 +44,11 @@ namespace ABML2
                     abml.CargarEmpleado();
                     break;
                 case 2:
-                    Console.WriteLine("Consulta");
+                    string dni = Validaciones.ValidaDNI(Console.ReadLine());
+                    abml.ConsultaAlumno(dni);
                     break;
                 case 3:
-                    Console.WriteLine("Modificacion");
+                    Console.WriteLine("Modificar");
                     break;
                 case 4:
                     abml.ListaEmpleado();

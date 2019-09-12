@@ -9,10 +9,11 @@ namespace ABML2
         public string DNI { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public int Edad { get; set; }
+        public string fechaNac { get; set; }
+        public string direccion { get; set; }
         public bool Hombre { get; set; }
         public TipoPersona tipo { get; set; }
-        public Carrera carrera { get; set; }
+        public List<Carrera> carreras = new List<Carrera>();
 
         public string sexo (bool hombre)
         {
@@ -21,10 +22,25 @@ namespace ABML2
             return "Mujer";
         }
 
+      
+
+        public void agregarCarrera(Carrera car)
+        {
+            carreras.Add(car);
+        }
+
+        public void mostrarCarreras()
+        {
+            foreach (Carrera carrera in carreras)
+            {
+                Console.Write(carrera.nombre +", "); 
+            }
+            Console.WriteLine();
+        }
 
         public override string ToString()
         {
-            return DNI +", "+ Nombre + " " + Apellido + ", " + sexo(Hombre) + ", carrera: "+carrera.nombre+", "+tipo.tipoPersona;
+            return DNI +", "+ Nombre + " " + Apellido + ", " + sexo(Hombre) +", "+tipo.tipoPersona+ ".";
         }
     }
 }
