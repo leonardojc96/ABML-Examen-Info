@@ -33,7 +33,7 @@ namespace ABML2
         {
             foreach (Carrera carrera in carreras)
             {
-                Console.Write(carrera.nombre +", "); 
+                Console.Write(carrera.nombre +". "); 
             }
             Console.WriteLine();
         }

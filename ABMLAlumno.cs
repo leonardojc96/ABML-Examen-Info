@@ -35,7 +35,8 @@ namespace ABML2
                 Console.WriteLine("Ingrese la direccion.");
                 alumno.direccion = Console.ReadLine();
 
-                Console.WriteLine("Ingresa el id de tipo de persona.");
+                Console.WriteLine();
+                Console.WriteLine("Ingresa el tipo de persona.");
 
                 foreach(TipoPersona tipo in tipos)
                 {
@@ -52,7 +53,7 @@ namespace ABML2
                     }
                     else
                     {
-                        Console.WriteLine("No existe un tipo con ese id, se le asignara el primer tipo encontrado.");
+                        Console.WriteLine("No existe ese tipo de persona, se le asignara el primer tipo encontrado.");
                         alumno.tipo = tipos.ElementAt(0);
                     }
                 }
@@ -61,28 +62,27 @@ namespace ABML2
                     Console.WriteLine("No se encontro ningun tipo, se asignara tipo vacio.");
                     alumno.tipo = new TipoPersona();
                 }
-                
-                Console.WriteLine("Ingrese el id de la carrera.");
+
+                Console.WriteLine();
+                Console.WriteLine("Ingrese la carrera.");
 
                 foreach (Carrera car in carreras)
                 {
                     Console.WriteLine(car.ToString());
                 }
 
-                
-
                 int idCarrera = Validaciones.ANumeroEntero(Console.ReadLine());
 
                 try
                 {
-                    if (carreras.Exists(c => c.idCarrera== idCarrera))
+                    if (carreras.Exists(c => c.idCarrera == idCarrera))
                     {
                         int indexCarrera = carreras.FindIndex(car => car.idCarrera == idCarrera);
                         alumno.agregarCarrera(carreras.ElementAt(indexCarrera));
                     }
                     else
                     {
-                        Console.WriteLine("No existe una carrera con ese id, se le asigno la primera carrera encontrada.");
+                        Console.WriteLine("No existe esa carrera, se le asigno la primera carrera encontrada.");
                         alumno.agregarCarrera(carreras.ElementAt(0));
                     }
                 }
@@ -131,48 +131,24 @@ namespace ABML2
         public void CargarTipo()
         {
             TipoPersona t = new TipoPersona();
-            Console.WriteLine("Ingrese el id.");
-            int idTipo = Validaciones.ANumeroEntero(Console.ReadLine());
-
-            if (!tipos.Exists(tip => tip.idTipo == idTipo))
-            {
-                t.idTipo = idTipo;
-                Console.WriteLine("Ingrese el tipo de persona.");
-                t.tipoPersona = Validaciones.ValidaNombre(Console.ReadLine());
-                tipos.Add(t);
-            }
-            else
-            {
-                Console.WriteLine("Ya existe un tipo con ese id.");
-            }
-
-
+            Console.WriteLine("Ingrese el tipo de persona.");
+            t.tipoPersona = Validaciones.ValidaNombre(Console.ReadLine());
+            tipos.Add(t);
         }
 
         public void CargarCarrera()
         {
             Carrera c = new Carrera();
-            
-            Console.WriteLine("Ingrese el id.");
-            int idCarrera = Validaciones.ANumeroEntero(Console.ReadLine());
 
-            if(!carreras.Exists(car => car.idCarrera == idCarrera))
-            {
-                c.idCarrera = idCarrera;
-                Console.WriteLine("Ingrese el nombre de la carrera.");
-                c.nombre = Validaciones.ValidaNombre(Console.ReadLine());
-                Console.WriteLine("Ingrese años de duracion.");
-                c.años = Validaciones.ANumeroEntero(Console.ReadLine());
-                Console.WriteLine("Ingrese descripcion.");
-                c.descripcion = Console.ReadLine();
-                Console.WriteLine("Ingrese la cantidad de materias.");
-                c.cantidadMaterias = Validaciones.ANumeroEntero(Console.ReadLine());
-                carreras.Add(c);
-            }
-            else
-            {
-                Console.WriteLine("Ya existe una carrera con ese id.");
-            }
+            Console.WriteLine("Ingrese el nombre de la carrera.");
+            c.nombre = Validaciones.ValidaNombre(Console.ReadLine());
+            Console.WriteLine("Ingrese años de duracion.");
+            c.años = Validaciones.ANumeroEntero(Console.ReadLine());
+            Console.WriteLine("Ingrese descripcion.");
+            c.descripcion = Console.ReadLine();
+            Console.WriteLine("Ingrese la cantidad de materias.");
+            c.cantidadMaterias = Validaciones.ANumeroEntero(Console.ReadLine());
+            carreras.Add(c);
         }
 
         public void ListaEmpleado()
